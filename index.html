@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>Travsales</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+  $(document).ready(function(){
+    var lastPos=0;
+    $(document).scroll(function(){
+    if($(document).scrollTop()>lastPos){
+       $('.header').addClass('hide-header');	
+    }else{
+      $('.header').removeClass('hide-header');	
+    }
+    lastPos = $(document).scrollTop();
+  });
+  
+  $('.menu-container .menu-close i.fa').click(function(){
+    activeDeactiveenu(false);
+  });
+  
+  $('#menu-bar').click(function(){
+    activeDeactiveenu(true);
+  });
+  function activeDeactiveenu(flag){
+    if(flag){
+      $('.menu-container').addClass('active');
+    }else{
+      console.log('dsdsd')
+      $('.menu-container').removeClass('active');
+    }
+  }
+
+});
+  </script>
+
+</head>
+
+<body>
+
+  <div class="splash-container"  style="visibility: hidden;">
+    <div class="popUpBanner">
+      <div class="modal-dialog popUpBanner--dialog">
+        <div class="modal-content popUpBanner--content">
+          <div class="popUpBanner--header">
+            <span class="logo"></span>
+            <input type="button" value="×" class="close" onclick="$('.splash-container').hide();">
+          </div>
+          <div class="modal-body popUpBanner--body">
+            <div class="popUpBanner--callnow--mobile">
+              <h1>CALL NOW FOR</h1>
+              <h2>Up to 30% Off</h2>
+              <h3>Lowest Price to USA and Canada</h3>
+            </div>
+            <div class="popUpBannerModal--footer">
+              <h1>Phone only Deals</h1>
+              <button class="popUpBannerModal--callnow-button">Call Now</button>
+            </div>
+            <a class="popUpBannerModal--phonenumber" href="tel:+919872111666">+91 9872111666</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="splash-container--desktop" style="visibility: hidden;">
+    <div class="popUpBanner">
+      <div class="modal-dialog popUpBanner--dialog--desktop">
+        <div class="modal-content popUpBanner--content--desktop">
+          <div class="popUpBanner--header--desktop">
+            <span class="logo"></span>
+            <input type="button" value="×" class="close" onclick="$('.splash-container--desktop').hide();">
+          </div>
+          <div class="modal-body popUpBanner--body--desktop">
+            <div class="popUpBanner--discount">
+              <h2>OFF</h2>
+              <h3>upto</h3>
+              <h1>30%</h1>
+              <span>on Flight Tickets Today</span>
+            </div>
+            <div class="popUpBanner--callnow">
+              <h3>Call Now</h3>
+              <a href="tel:+919872111666"><span></span>+91 9872111666</a>
+              <h2>Phone only Deals</h2>
+              <span>Lowest Price from India to USA and Canada</span>
+              <h1 class="popUpBanner--thankyou" >Thank you for your subscription</h1>
+              <div class="popUpBanner--singup" >
+                <h1>Sign up to get secrets Deals!</h1>
+                <input type="email" class="popUpBanner--singup-input" placeholder="Enter your email for best flight deals">
+                <button class="popUpBanner--singup-button" ></button>
+                <label  class="error">Please enter valid email-ID!</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span>Call me now</span><input type="button" value="x" class="close" data-dismiss="modal">
+        </div>
+        <div class="modal-body modcont">
+          <section class="pop_offers" id="c2ctitle" style="display: block;">
+            <span class="offers">Upto 30% OFF - Phone Only Deal</span>
+            <span class="help">Our friendly staff is eager to help you find the best fare</span>
+          </section>
+
+          <section class="pop_offers" id="c2cTitleSuccess" style="display:none">
+            <span class="offers">We are calling you right now<br>to help you find the best deals</span>
+          </section>
+
+          <section class="enter_number">
+            <label id="c2center" style="display: block;">Please enter your phone number</label>
+            <label id="c2cpick" style="display:none">Please pick your phone</label>
+            <div class="enter_no">
+              <span class="no_pre">+91</span>
+              <span class="fill_number">
+              <input type="text" id="ccmobno" maxlength="14">
+              <img src="//cdn.travelopod.net/static/tp/images/home/tp-home-flag-img.png">
+              </span>
+            </div>
+            <div class="btn">
+              <label class="error err" style="display:none; color:red; font-size:12px; font-weight:600; text-transform: capitalize;" id="c2cnumber">Please enter valid mobile number!</label>
+              <input type="button" class="btn btn-default button_popUp" value="Call me now" id="c2cbtn"  style="background: url(&quot;assets/images/btn_bg.jpg&quot;) 0px bottom repeat-x;">
+            </div>
+            <span class="call_bottom">‘Our Clients testify &amp; love us’</span>
+          </section>
+          <section class="bottom_lines">
+
+          </section>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <!--End Pop Up  -->
+  <div id="confirmationpopup" class="divContent confirm_pop" style="display: none;">
+    <div class="inner innerwidth">
+      <section>
+        <h4><span class="close_icon" onclick="$('#confirmationpopup').css('display','none');">X</span></h4>
+        <img src="assets/images/query-submission.jpg" class="img-responsive" alt="call" width="auto;" height="100px">
+      </section>
+    </div>
+  </div>
+
+  
+<div class="menu-container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 menu-close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>  
+  </div>
+</div>
+<nav class="navbar navv navbar-default header">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="/"><img src="assets/images/logo.gif"></a>
+      <span class="call_btn clll-btn"><h3 class="phn_number_for_mobile rights-banner"><a href="tel:+91 9872111666">+91 9872111666</a></h3></span>
+
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="navwrap">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" id="menu-bar"><i class="fa fa-bars" aria-hidden="true"></i></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+      <!-- /navbar-collapse -->
+  </div>
+</nav>
+
+  <div class="container-fluid nopad container-body" >
+        <div class="bck_img" style="background-image:url(assets/images/mainbanner-back.png)" class="img-responsive">
+        <div class="container">
+          <div class="col-md-5">
+            
+
+<form class="form-container row" name="enqForm" >
+    <div class="col-md-12">
+      <ul class="categories">
+        <li class="active"><i class="fa fa-plane" aria-hidden="true"></i><br>Flight</li>
+        <li><i class="fa fa-building" aria-hidden="true"></i><br>Hotels</li>
+        <li><i class="fa fa-car" aria-hidden="true"></i><br>Car</li>
+        <li><i class="fa fa-tachometer" aria-hidden="true"></i><br>Activities</li>
+      </ul>
+    </div>
+    <div class="form-group col-md-12">
+      <input type="text" class="form-control" placeholder="Origin" 
+      id="From"  name="from" required>
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </div>
+    <div class="form-group col-md-12">
+      <input type="text" class="form-control" placeholder="Destination" id="to"  name="to" >
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </div>
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" placeholder="Departure" name="FromDate" uib-datepicker-popup
+      datepicker-options="cal.dueDateOptions" is-open="cal.isFromDateOpened"  show-button-bar="false" required>
+      <i class="fa fa-calendar" aria-hidden="true"></i>
+    </div>
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" placeholder="Return" name="ToDate"
+       uib-datepicker-popup datepicker-options="{'minDate': enquiryForm.fromDate}"
+       is-open="cal.isToDateOpened"  show-button-bar="false">
+      <i class="fa fa-calendar" aria-hidden="true"></i>
+    </div>
+    <div class="form-group col-md-12">
+      <input type="text" class="form-control" placeholder="Email" 
+      id="email" name="email" >
+      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+    </div>
+    <div class="form-group col-md-12">
+      <input type="text" class="form-control" placeholder="Phone" avn-only-numbers  
+      id="mobno" name="mobno" class="form-control" maxlength="10" placeholder="Phone">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+    </div>
+    <div class="form-group col-md-12">
+    <button type="button" class="btn btn-default frmbtn">Submit</button>
+  </div>
+</form>
+
+</div>
+<div class="col-md-7 col-sm-12 col-xs-12 baner-right-side">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 imp-note">
+      <span class="text"><b>IMPORTANT NOTICE</b>: We are monitoring the activity of Mount Agung in Bali and assessing flying conditions. If there are any changes to our services, guests will be notified via SMS and email. You can also check the status of your flight on our Flight Status page.</span>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 baner-details">
+       <h4 class="baner-title">Book Now Fly Now</h4>
+       <div class="banner-journey">Fly to Pune, Kochi, Ranchi<br>Hyderabad, Kolkata and more!</div>
+       <div class="banner-price-pretext">
+          From
+       </div>
+       <div class="banner-price">
+          Rs 1,299
+       </div>
+       <div class="banner-button">
+            <a  target="_self">BOOK NOW</a>
+       </div>
+    </div>
+  </div>
+</div>  
+
+
+       </div>
+     </div>
+    </div>
+<div class="container default-info">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 icon-info">
+          <i class="fa fa-thermometer-quarter" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 icon-info">
+          <i class="fa fa-address-book" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 icon-info">
+          <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <!--international destinations-->
+
+    <div class="container destination_main">
+    <div class="head container">Explore International Destinations</div>
+    <div class="col-md-3 col-sm-6 nopad card-cotainer">
+      <div class="destination_item first">
+        
+        <div class="destination_info">
+          <h3>IND <i class="fa fa-plane" aria-hidden="true"></i> USA</h3>
+          <p>on cheap flights to USA</p>
+          <span>Fly from Rs. 29,809+</span>
+          <div class="dealbook">Book</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 nopad card-cotainer">
+      <div class="destination_item second">
+        <div class="destination_info">
+          <h3>IND <i class="fa fa-plane" aria-hidden="true"></i> Europe</h3>
+          <p>on cheap flights to Thailand</p>
+          <span>Fly from Rs. 15,514+</span>
+          <div class="dealbook">Book</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 nopad card-cotainer">
+      <div class="destination_item third">
+        <div class="destination_info">
+          <h3>IND <i class="fa fa-plane" aria-hidden="true"></i> Canada</h3>
+          <p>on cheap flights to Canada</p>
+          <span>Fly from Rs. 30,668+</span>
+          <div class="dealbook">Book</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 nopad card-cotainer">
+      <div class="destination_item forth">
+        <div class="destination_info">
+          <h3>IND <i class="fa fa-plane" aria-hidden="true"></i> Australia/NZ</h3>
+          <div class="dealbook">Book</div>
+          <p>on cheap flights to Aus/NZ</p>
+          <span>Fly from Rs. 11,527+</span>
+          <div class="dealbook">Book</div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="container">
+    <div class="col-md-4 col-sm-6 nopad card-cotainer">
+      <div class="destination_item five">
+          <figure><img src="assets/images/dealbox-main5.jpg"></figure>
+        <div class="destination_info">
+          <h3>IND <i class="fa fa-plane" aria-hidden="true"></i> Thailand</h3>
+          <p>on cheap flights to Thailand</p>
+          <span>Fly from Rs. 6,317+</span>
+          <div class="dealbook">Book</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 nopad card-cotainer">
+      <div class="destination_item">
+        <figure><img src="assets/images/dealbox-main5.jpg"></figure>
+        <div class="destination_info ">
+          <h3>IND <i class="fa fa-plane" aria-hidden="true"></i> Singapore</h3>
+          <p>on cheap flights to Singapore</p>
+          <span>Fly from Rs. 5,113+</span>
+          <div class="dealbook">Book</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 nopad card-cotainer">
+      <div class="destination_item">
+        <figure><img src="assets/images/dealbox-main6.jpg"></figure>
+        <div class="destination_info">
+          <h3>IND <i class="fa fa-plane" aria-hidden="true"></i> Malaysia</h3>
+          <p>on cheap flights to Malaysia</p>
+          <span>Fly from Rs. 5,909+</span>
+          <div class="dealbook">Book</div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <!--international destinations-->
+
+    <!--flight deals-->
+    <div class="container-fluid destination_main_new">
+    <div class="container">
+    <div class="col-md-8">
+      <div class="revwrap">
+          <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+          <div class="cont">Customer support is best in the industry,I was flying for the first time to other country and was little worried but after booking my flight I got a call from customer care where they provided necessary details. Overall it was a best experience.</div>
+      </div>
+    </div>
+  </div>
+    <!--phone book banner-->
+  
+    </div>
+</div>
+<div class="container-fluid footer">
+<div class="container">
+  <div class="footwrap">
+  
+
+  <div class="foothead col-md-3 col-sm-3 col-xs-6">
+    <img src="assets/images/lineimg.gif">
+    <span>About Travsales</span>
+    <img src="/images/lineimg.gif">
+  <div class="important_links_footer">
+    <ul>
+      <li><a href="#" >About us</a></li>
+      <li><a href="#" >Contact us</a></li>
+      <li><a href="#" >Terma &amp; Conditions </a></li>
+      <li><a href="#" >Privacy Policy</a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="foothead col-md-3 col-sm-3 col-xs-6">
+    <img src="assets/images/lineimg.gif">
+    <span>Follow Travsales</span>
+    <img src="assets/images/lineimg.gif">
+    <div class="social_media_icons">
+      <a href="https://www.facebook.com/Travsales-1831285703786661" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/Travsales1" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/travsales/ " target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+  </body>
+</html>
